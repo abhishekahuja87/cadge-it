@@ -1,0 +1,148 @@
+{
+  "items": [
+    {
+      "id": "gown1",
+      "description": "ethnicWear1",
+      "price": 1200,
+      "category": "clothes",
+      "subCategory": "ethnicWear",
+      "images": ["/res/images/Gown1_1.jpg", "/res/images/Gown1_2.jpg"]
+    },
+    {
+      "id": "gown2",
+      "description": "ethnicWear2",
+      "price": 1000,
+      "category": "clothes",
+      "subCategory": "ethnicWear",
+      "images": ["/res/images/Gown2_1.jpg", "/res/images/Gown2_2.jpg"]
+    },
+    {
+      "id": "gown3",
+      "description": "ethnicWear2",
+      "price": 1000,
+      "category": "clothes",
+      "subCategory": "ethnicWear",
+      "images": ["/res/images/Gown3_1.jpg", "/res/images/Gown3_2.jpg"]
+    },
+    {
+      "id": "fusion1",
+      "description": "fusionWear1",
+      "price": 1000,
+      "category": "clothes",
+      "subCategory": "fusionWear",
+      "images": ["/res/images/fusion1_1.jpg", "/res/images/fusion1_2.jpg"]
+    },
+    {
+      "id": "fusion2",
+      "description": "fusionWear1",
+      "price": 1000,
+      "category": "clothes",
+      "subCategory": "fusionWear",
+      "images": ["/res/images/fusion2_1.jpg", "/res/images/fusion2_2.jpg"]
+    },
+    {
+      "id": "western1",
+      "description": "westernWear1",
+      "price": 1000,
+      "category": "clothes",
+      "subCategory": "westernWear",
+      "images": [
+        "/res/images/western1_1.jpg",
+        "/res/images/western1_2.jpg",
+        "/res/images/western1_3.jpg"
+      ]
+    },
+    {
+      "id": "western2",
+      "description": "westernWear1",
+      "price": 1000,
+      "category": "clothes",
+      "subCategory": "westernWear",
+      "images": ["/res/images/western2_1.jpg", "/res/images/western2_2.jpg"]
+    },
+    {
+      "id": 7,
+      "description": "clutches2",
+      "price": 1000,
+      "category": "accessories",
+      "subCategory": "clutches",
+      "images": [
+        "/res/images/Gown 1 - Copy.jpg",
+        "/res/images/Gown 2 - Copy.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "description": "clutches2",
+      "price": 1000,
+      "category": "accessories",
+      "subCategory": "clutches",
+      "images": [
+        "/res/images/Gown 1 - Copy.jpg",
+        "/res/images/Gown 2 - Copy.jpg"
+      ]
+    },
+    {
+      "id": "Jewellery_Earings_Neel_1001",
+      "description": "Gold toned circles earings",
+      "price": 100,
+      "category": "accessories",
+      "subCategory": "jewellery",
+      "images": [
+        "/res/images/Jewellery_Earings_Neel_1001_Gold toned circles_01.jpg",
+        "/res/images/Jewellery_Earings_Neel_1001_Gold toned circles_02.jpg",
+        "/res/images/Jewellery_Earings_Neel_1001_Gold toned circles_03.jpg"
+      ]
+    },
+    {
+      "id": "Jewellery_Earings_Neel_1002",
+      "description": "Silver Toned Geometric Drop Earrings",
+      "price": 100,
+      "category": "accessories",
+      "subCategory": "jewellery",
+      "images": [
+        "/res/images/Jewellery_Earings_Neel_1002_Silver Toned Geometric Drop Earrings_01.jpg",
+        "/res/images/Jewellery_Earings_Neel_1002_Silver Toned Geometric Drop Earrings_02.jpg",
+        "/res/images/Jewellery_Earings_Neel_1002_Silver Toned Geometric Drop Earrings_03.jpg"
+      ]
+    },
+    {
+      "id": "Jewellery_Earings_Neel_1003",
+      "description": "_Pink Geometric Drop Earrings",
+      "price": 100,
+      "category": "accessories",
+      "subCategory": "jewellery",
+      "images": [
+        "/res/images/Jewellery_Earings_Neel_1003_Pink Geometric Drop Earrings_01.jpg",
+        "/res/images/Jewellery_Earings_Neel_1003_Pink Geometric Drop Earrings_02.jpg",
+        "/res/images/Jewellery_Earings_Neel_1003_Pink Geometric Drop Earrings_03.jpg",
+        "/res/images/Jewellery_Earings_Neel_1002_Silver Toned Geometric Drop Earrings_02.jpg"
+      ]
+    },
+    {
+      "id": "Jewellery_Necklace_Neel_1001",
+      "description": "Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace",
+      "price": 100,
+      "category": "accessories",
+      "subCategory": "jewellery",
+      "images": [
+        "/res/images/Jewellery_Necklace_Neel_1001_Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace_01.jpg",
+        "/res/images/Jewellery_Necklace_Neel_1001_Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace_02.jpg",
+        "/res/images/Jewellery_Necklace_Neel_1001_Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace_03.jpg",
+        "/res/images/Jewellery_Necklace_Neel_1001_Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace_04.jpg"
+      ]
+    },
+    {
+      "id": "Jewellery_Necklace_Neel_1002",
+      "description": "Gold-Toned Green and Teal Necklace",
+      "price": 100,
+      "category": "accessories",
+      "subCategory": "jewellery",
+      "images": [
+        "/res/images/Jewellery_Necklace_Neel_1002_Gold-Toned Green and Teal Necklace_01.jpg",
+        "/res/images/Jewellery_Necklace_Neel_1002_Gold-Toned Green and Teal Necklace_02.jpg",
+        "/res/images/Jewellery_Necklace_Neel_1002_Gold-Toned Green and Teal Necklace_03.jpg"
+      ]
+    }
+  ]
+}
