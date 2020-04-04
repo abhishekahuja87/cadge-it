@@ -1,16 +1,13 @@
 import React, { Component } from "react";
-import myTestData from "./itemCollection1.json";
 import { Card, Carousel, Row, Col, Button } from "antd";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
+import myTestData from "./itemCollection1.json";
 import {
   HeartOutlined,
   ShoppingOutlined,
   HeartFilled
 } from "@ant-design/icons";
-import { grey } from "color-name";
 
-class Items extends Component {
+class Items1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,39 +35,6 @@ class Items extends Component {
     const { Meta } = Card;
     if (myTestData === undefined) {
       return "loading";
-    }
-
-    if (this.state.isOpen === true) {
-      return (
-        <Lightbox
-          mainSrc={this.state.imageLightBox[this.state.photoIndex]}
-          nextSrc={
-            this.state.imageLightBox[
-              (this.state.photoIndex + 1) % this.state.imageLightBox.length
-            ]
-          }
-          prevSrc={
-            this.state.imageLightBox[
-              (this.state.photoIndex + this.state.imageLightBox.length - 1) %
-                this.state.imageLightBox.length
-            ]
-          }
-          onCloseRequest={() => this.setState({ isOpen: false })}
-          onMovePrevRequest={() =>
-            this.setState({
-              photoIndex:
-                (this.state.photoIndex + this.state.imageLightBox.length - 1) %
-                this.state.imageLightBox.length
-            })
-          }
-          onMoveNextRequest={() =>
-            this.setState({
-              photoIndex:
-                (this.state.photoIndex + 1) % this.state.imageLightBox.length
-            })
-          }
-        />
-      );
     }
 
     console.log(myTestData.items);
@@ -109,16 +73,13 @@ class Items extends Component {
       <Row style={{ height: "", width: "100%" }}>
         {filteredItems.map(item => {
           return (
-            <Col key={item.id} span={window.innerWidth > 600 ? 8 : 24}>
+            <Col key={item.id} span={8}>
               <Card
                 style={{
                   margin: "15%",
                   // maxHeight: "500px",
-                  border: "5px solid yellow",
-                  backgroundColor: "lightgrey"
-                  //   display: "flex",
-                  //   justifyContent: "spaceBetween",
-                  //   flexWrap: "wrap"
+                  border: "5px solid yellow"
+                  //   backgroundColor: "lightgrey"
                 }}
                 hoverable
                 cover={
@@ -137,18 +98,8 @@ class Items extends Component {
                 actions={[
                   this.state.wishListedItems.filter(e => e.id === item.id)
                     .length === 0 ? (
-                    // <Icon
-                    //   type="heart"
-                    //   onClick={e => this.addToWishList(item)}
-                    // />
                     <HeartOutlined onClick={e => this.addToWishList(item)} />
                   ) : (
-                    // <Icon
-                    //   type="heart"
-                    //   theme="filled"
-                    //   style={{ color: "#1890ff" }}
-                    //   onClick={e => this.removeFromWishlist(item)}
-                    // />
                     <HeartFilled
                       // theme="filled"
                       style={{ color: "#1890ff" }}
@@ -167,7 +118,6 @@ class Items extends Component {
                 ]}
               >
                 <Meta
-                  //   style={{ backgroundColor: "grey", padding: "10px" }}
                   title={"Rs " + item.price}
                   description={item.description}
                 />
@@ -178,37 +128,6 @@ class Items extends Component {
       </Row>
     );
   }
-
-  clickImg = item => {
-    console.log(item);
-    let images = item.images;
-    this.setState({ isOpen: true });
-    this.setState({ imageLightBox: images });
-  };
-
-  addToWishList = item => {
-    this.props.addToWishList(item);
-    // console.log(item);
-    // let wishListedItemsL = this.state.wishListedItems;
-    // wishListedItemsL.push(item);
-    // this.setState({ wishListedItems: wishListedItemsL });
-  };
-
-  removeFromWishlist = item => {
-    this.props.removeFromWishlist(item);
-    // console.log(item);
-    // let wishListedItemsL = this.state.wishListedItems;
-    // wishListedItemsL.pop(item);
-    // this.setState({ wishListedItems: wishListedItemsL });
-  };
-
-  addToCart = item => {
-    this.props.addToCart(item);
-    // console.log(item);
-    // let addedCartItemsL = this.state.cartItems;
-    // addedCartItemsL.push(item);
-    // this.setState({ addedCartItems: addedCartItemsL });
-  };
 }
 
-export default Items;
+export default Items1;

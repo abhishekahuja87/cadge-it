@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card } from "antd";
+import { Card, Row, Col } from "antd";
 
 class Contact extends Component {
   constructor(props) {
@@ -8,19 +8,24 @@ class Contact extends Component {
   }
   render() {
     return (
-      <div>
-        <Card
-          title="Contact Us"
-          style={{
-            width: 300,
-            margin: "auto",
-            marginTop: "30px"
-          }}
-        >
-          <p>For any queries, Contact us at </p>{" "}
-          <p style={{ fontWeight: "bold" }}>cadgeit@gmail.com</p>
-        </Card>
-      </div>
+      <Row style={{ height: "40vh", width: "100%" }}>
+        <Col span={window.innerWidth > 600 ? 9 : 2}></Col>
+        <Col span={window.innerWidth > 600 ? 6 : 20}>
+          <Card
+            title="Contact Us"
+            style={{
+              // marginLeft: "auto",
+              // marginRight: "auto",
+              marginTop: "30px",
+              backgroundColor: "lightYellow"
+            }}
+          >
+            <p>For any queries, Contact us at </p>{" "}
+            <p style={{ fontWeight: "bold" }}>cadgeit@gmail.com</p>
+          </Card>
+        </Col>
+        <Col span={window.innerWidth > 600 ? 9 : 2}></Col>
+      </Row>
     );
   }
 }

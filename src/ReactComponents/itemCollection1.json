@@ -18,7 +18,23 @@
     },
     {
       "id": "gown3",
-      "description": "ethnicWear2",
+      "description": "ethnicWear3",
+      "price": 1000,
+      "category": "clothes",
+      "subCategory": "ethnicWear",
+      "images": ["/res/images/Gown3_1.jpg", "/res/images/Gown3_2.jpg"]
+    },
+    {
+      "id": "gown4",
+      "description": "ethnicWear4",
+      "price": 1000,
+      "category": "clothes",
+      "subCategory": "ethnicWear",
+      "images": ["/res/images/Gown3_1.jpg", "/res/images/Gown3_2.jpg"]
+    },
+    {
+      "id": "gown5",
+      "description": "ethnicWear5",
       "price": 1000,
       "category": "clothes",
       "subCategory": "ethnicWear",

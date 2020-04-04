@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Layout, Menu, Breadcrumb, Icon, Row, Col, Alert } from "antd";
-import MainNav from "./MainNav";
 import MyCarousel from "./MyCarousel";
 import MyTimeline from "./MyTimeline";
 
@@ -15,46 +14,34 @@ class MainPage extends Component {
     const { SubMenu } = Menu;
     const { Header, Content, Footer } = Layout;
     return (
-      <div>
-        <Content
-          style={{
-            // backgroundColor: "green",
-            margin: "5px"
-          }}
-        >
+      <div style={{ width: "100%", backgroundColor: "lightyellow" }}>
+        <div>
           <MyCarousel />
           <div
             style={{
-              textAlign: "center",
-              height: "85vh",
-              backgroundColor: "white"
+              fontSize: "30px",
+              fontWeight: "bold",
+              padding: "20px 0px 20px 0px",
+              textAlign: "center"
             }}
           >
-            <div
-              style={{
-                fontSize: "30px",
-                fontWeight: "bold",
-                padding: "20px 0px 20px 0px"
-              }}
-            >
-              How it Works
-            </div>
-
-            <span>
-              <MyTimeline />
-            </span>
-
-            <div>
-              <Alert
-                style={{ width: "50%", margin: "auto", marginTop: "40px" }}
-                message="Important Note"
-                description="We take Security Deposit to avoid any damage or theft of the product, please use the product as your own to make hassle free Deposit Refund"
-                type="info"
-                showIcon
-              />
-            </div>
+            How it Works
           </div>
-        </Content>
+
+          <span>
+            <MyTimeline />
+          </span>
+
+          <div style={{ marginBottom: "20px" }}>
+            <Alert
+              style={{ width: "70%", margin: "auto", marginTop: "40px" }}
+              message="Important Note"
+              description="We take Security Deposit to avoid any damage or theft of the product, please use the product as your own to make hassle free Deposit Refund"
+              type="info"
+              showIcon
+            />
+          </div>
+        </div>
       </div>
     );
   }
