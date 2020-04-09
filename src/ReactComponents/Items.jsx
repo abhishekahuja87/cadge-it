@@ -3,7 +3,6 @@ import myTestData from "./itemCollection1.json";
 import { Card, Carousel, Row, Col, Button } from "antd";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
-import ExifOrientationImg from "react-exif-orientation-img";
 import {
   HeartOutlined,
   ShoppingOutlined,
