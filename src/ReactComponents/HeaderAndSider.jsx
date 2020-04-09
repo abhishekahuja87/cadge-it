@@ -41,7 +41,7 @@ import {
   Redirect,
   HashRouter
 } from "react-router-dom";
-import Items1 from "./Items1";
+// import Items1 from "./Items1";
 import emailjs from "emailjs-com";
 import MainPage from "./MainPage";
 import Contact from "./Contact";
@@ -61,13 +61,8 @@ class HeaderAndSider extends Component {
     };
   }
 
-  clothes_ethnicWear = () => {
-    console.log("clothes_ethnicWear");
-    window.location = "/items/clothes/ethnicWear";
-  };
-
   render() {
-    console.log(this.props);
+    // console.log(this.props);
 
     if (this.state.showCart === true) {
       let total = 0;
@@ -193,6 +188,12 @@ class HeaderAndSider extends Component {
             }}
           >
             <div className="logo" onClick={this.goToHome}>
+              {/* <img
+                style={{ marginRight: "10px" }}
+                src={"./logo.png"}
+                width={50}
+                height={50}
+              ></img> */}
               CadgeIt
             </div>
             <Menu
@@ -202,7 +203,10 @@ class HeaderAndSider extends Component {
             >
               <Menu.Item key="nav-cart" onClick={this.showCartDrawer}>
                 <span style={{ margin: "0px" }}>
-                  <Badge count={this.state.cartItems.length}>
+                  <Badge
+                    style={{ backgroundColor: "yellow", color: "black" }}
+                    count={this.state.cartItems.length}
+                  >
                     <ShoppingOutlined style={{ fontSize: "25px" }} />
                   </Badge>
                 </span>
@@ -233,13 +237,25 @@ class HeaderAndSider extends Component {
                     </span>
                   }
                 >
-                  <Menu.Item key="cat1opt1" onClick={this.clothes_ethnicWear}>
+                  <Menu.Item
+                    style={{ color: "yellow" }}
+                    key="cat1opt1"
+                    onClick={this.clothes_ethnicWear}
+                  >
                     Ethnic Wear
                   </Menu.Item>
-                  <Menu.Item key="cat1opt2" onClick={this.clothes_fusionWear}>
+                  <Menu.Item
+                    style={{ color: "yellow" }}
+                    key="cat1opt2"
+                    onClick={this.clothes_fusionWear}
+                  >
                     Fusion Wear
                   </Menu.Item>
-                  <Menu.Item key="cat1opt3" onClick={this.clothes_westernWear}>
+                  <Menu.Item
+                    style={{ color: "yellow" }}
+                    key="cat1opt3"
+                    onClick={this.clothes_westernWear}
+                  >
                     Western Wear
                   </Menu.Item>
                 </SubMenu>
@@ -247,18 +263,37 @@ class HeaderAndSider extends Component {
                   title={
                     <span>
                       <EnvironmentOutlined />
-                      Accessories
+                      Jewellery
                     </span>
                   }
                 >
-                  <Menu.Item key="cat2opt1" onClick={this.accessories_clutches}>
-                    Clutches
+                  <Menu.Item
+                    style={{ color: "yellow" }}
+                    key="cat2opt1"
+                    onClick={this.accessories_earings}
+                  >
+                    Earings
                   </Menu.Item>
                   <Menu.Item
+                    style={{ color: "yellow" }}
                     key="cat2opt2"
-                    onClick={this.accessories_jewellery}
+                    onClick={this.accessories_jewellery_set}
                   >
-                    Jewellery
+                    Jewellery Set
+                  </Menu.Item>
+                  <Menu.Item
+                    style={{ color: "yellow" }}
+                    key="cat2opt3"
+                    onClick={this.accessories_necklace}
+                  >
+                    Necklace
+                  </Menu.Item>
+                  <Menu.Item
+                    style={{ color: "yellow" }}
+                    key="cat2opt4"
+                    onClick={this.accessories_maang_tika}
+                  >
+                    Maang Tika
                   </Menu.Item>
                 </SubMenu>
                 <Menu.Item key="2" onClick={this.contactPage}>
@@ -266,7 +301,10 @@ class HeaderAndSider extends Component {
                 </Menu.Item>
                 <Menu.Item key="nav-wishlist" onClick={this.showWishlistDrawer}>
                   <span style={{ margin: "0px", lineHeight: "60px" }}>
-                    <Badge count={this.state.wishListedItems.length}>
+                    <Badge
+                      style={{ backgroundColor: "yellow", color: "black" }}
+                      count={this.state.wishListedItems.length}
+                    >
                       <HeartOutlined style={{ fontSize: "25px" }} />
                     </Badge>
                   </span>
@@ -323,7 +361,7 @@ Header1
   };
 
   onplaceOrder = e => {
-    console.log("place order click");
+    // console.log("place order click");
 
     var templateParams = {
       to_name: "Neelima",
@@ -364,10 +402,10 @@ Header1
       )
       .then(
         function(response) {
-          console.log("SUCCESS!", response.status, response.text);
+          // console.log("SUCCESS!", response.status, response.text);
         },
         function(error) {
-          console.log("FAILED...", error);
+          // console.log("FAILED...", error);
         }
       );
 
@@ -380,10 +418,10 @@ Header1
       )
       .then(
         function(response) {
-          console.log("SUCCESS!", response.status, response.text);
+          // console.log("SUCCESS!", response.status, response.text);
         },
         function(error) {
-          console.log("FAILED...", error);
+          // console.log("FAILED...", error);
         }
       );
   };
@@ -392,13 +430,13 @@ Header1
     let items = this.props.cartItems;
     console.log(this.props.cartItems);
 
-    console.log("Success:", values);
+    // console.log("Success:", values);
 
     // this.removeAllFromCart();
 
     this.setState({ showCart: false, showChildrenDrawer: false });
 
-    console.log("place order click");
+    // console.log("place order click");
 
     let itemsStr = "";
 
@@ -476,25 +514,25 @@ Header1
       )
       .then(
         function(response) {
-          console.log("SUCCESS!", response.status, response.text);
+          // console.log("SUCCESS!", response.status, response.text);
         },
         function(error) {
-          console.log("FAILED...", error);
+          // console.log("FAILED...", error);
         }
       );
   };
 
   onChange = (date, dateString) => {
-    console.log(date, dateString);
+    // console.log(date, dateString);
     this.setState({ startDate: dateString });
   };
 
   onFinishFailed = errorInfo => {
-    console.log("Failed:", errorInfo);
+    // console.log("Failed:", errorInfo);
   };
 
   getPlaceOrderForm = () => {
-    console.log("sdsdsd");
+    // console.log("sdsdsd");
 
     // const { RangePicker } = DatePicker;
 
@@ -653,29 +691,44 @@ Header1
     window.location = "/contact";
   };
 
+  // clothes_ethnicWear = () => {
+  //   console.log("clothes_ethnicWear");
+  //   window.location = "/items/clothes/ethnicWear";
+  // };
+
   clothes_ethnicWear = () => {
-    console.log("clothes_ethnicWear");
+    // console.log("clothes_ethnicWear");
     window.location = "/items/clothes/ethnicWear";
   };
 
   clothes_fusionWear = () => {
-    console.log("clothes_fusionWear");
+    // console.log("clothes_fusionWear");
     window.location = "/items/clothes/fusionWear";
   };
 
   clothes_westernWear = () => {
-    console.log("clothes_westernWear");
+    // console.log("clothes_westernWear");
     window.location = "/items/clothes/westernWear";
   };
 
-  accessories_clutches = () => {
-    console.log("accessories_clutches");
-    window.location = "/items/accessories/clutches";
+  accessories_earings = () => {
+    // console.log("accessories_earings");
+    window.location = "/items/accessories/earings";
   };
 
-  accessories_jewellery = () => {
-    console.log("accessories_jewellery");
-    window.location = "/items/accessories/jewellery";
+  accessories_jewellery_set = () => {
+    // console.log("accessories_jewellery_set");
+    window.location = "/items/accessories/jewellery_set";
+  };
+
+  accessories_necklace = () => {
+    // console.log("accessories_necklace");
+    window.location = "/items/accessories/necklace";
+  };
+
+  accessories_maang_tika = () => {
+    // console.log("accessories_necklace");
+    window.location = "/items/accessories/maang_tika";
   };
 
   goToHome = () => {
@@ -683,7 +736,7 @@ Header1
   };
 
   onChange(value) {
-    console.log("changed", value);
+    // console.log("changed", value);
   }
 
   getCartViewItem = item => {
@@ -698,7 +751,7 @@ Header1
           <React.Fragment>
             <img
               style={{
-                width: "20%",
+                width: "15%",
                 height: "80px",
                 objectFit: "fit"
               }}
@@ -707,14 +760,14 @@ Header1
               src={item.images[0]}
             />
 
-            <span style={{ fontSize: "15px", marginLeft: "10px" }}>
+            <span style={{ fontSize: "15px", marginLeft: "5px" }}>
               Rent: {item.price}, Deposit: {item.price * 5}
             </span>
-            <span style={{ fontSize: "15px", marginLeft: "10px" }}> =</span>
+            <span style={{ fontSize: "15px", marginLeft: "5px" }}>=</span>
             <span
               style={{
                 fontSize: "15px",
-                marginLeft: "10px",
+                marginLeft: "5px",
                 fontWeight: "bold"
               }}
             >
@@ -725,7 +778,7 @@ Header1
               type="primary"
               // shape="circle"
               icon={<CloseSquareOutlined />}
-              style={{ marginLeft: "20px" }}
+              style={{ marginLeft: "5px" }}
             />
           </React.Fragment>
         </Card>
@@ -740,13 +793,13 @@ Header1
         <Card
           size="small"
           title={item.description}
-          extra={<a href="#">Link to Item</a>}
+          // extra={<a href="#">Link to Item</a>}
           style={{ width: "100%" }}
         >
           <React.Fragment>
             <img
               style={{
-                width: "20%",
+                width: "15%",
                 height: "80px",
                 objectFit: "fit"
               }}
@@ -755,14 +808,14 @@ Header1
               src={item.images[0]}
             />
 
-            <span style={{ fontSize: "15px", marginLeft: "10px" }}>
+            <span style={{ fontSize: "15px", marginLeft: "5px" }}>
               Rent: {item.price}, Deposit: {item.price * 5}
             </span>
-            <span style={{ fontSize: "15px", marginLeft: "10px" }}> =</span>
+            <span style={{ fontSize: "15px", marginLeft: "5px" }}>=</span>
             <span
               style={{
                 fontSize: "15px",
-                marginLeft: "10px",
+                marginLeft: "5px",
                 fontWeight: "bold"
               }}
             >
@@ -774,7 +827,7 @@ Header1
               // shape="circle"
               // icon="close-square"
               icon={<CloseSquareOutlined />}
-              style={{ marginLeft: "20px" }}
+              style={{ marginLeft: "5px" }}
             />
           </React.Fragment>
         </Card>
@@ -784,7 +837,7 @@ Header1
   };
 
   removeFromCart = item => {
-    console.log(item);
+    // console.log(item);
     this.props.removeFromCart(item);
   };
 
@@ -803,14 +856,14 @@ Header1
   };
 
   removeFromWishlist = item => {
-    console.log(item);
+    // console.log(item);
     this.props.removeFromWishlist(item);
   };
 
   // tpm
   addToWishList = item => {
     message.info("Added to Wishlist");
-    console.log(item);
+    // console.log(item);
     let wishListedItemsL = this.state.wishListedItems;
     wishListedItemsL.push(item);
     this.setState({ wishListedItems: wishListedItemsL });
@@ -824,7 +877,7 @@ Header1
 
   addToCart = item => {
     message.info("Added to Cart");
-    console.log(item);
+    // console.log(item);
     let cartItemsL = this.state.cartItems;
     cartItemsL.push(item);
     this.setState({ cartItems: cartItemsL });
@@ -843,10 +896,15 @@ Header1
 
   removeFromCart = item => {
     message.info("Removed from cart");
-    console.log(item);
+    // console.log(item);
     let cartItemsL = this.state.cartItems;
-    cartItemsL.pop(item);
-    this.setState({ cartItems: cartItemsL });
+
+    let allOtherItems = cartItemsL.filter(x => {
+      return x.id != item.id;
+    });
+
+    // cartItemsL.pop(item);
+    this.setState({ cartItems: allOtherItems });
 
     //store to local storage
     localStorage.setItem("allCartItems1", JSON.stringify(this.state.cartItems));
@@ -854,10 +912,15 @@ Header1
 
   removeFromWishlist = item => {
     message.info("Removed from wishlist");
-    console.log(item);
+    // console.log(item);
     let wishListedItemsL = this.state.wishListedItems;
-    wishListedItemsL.pop(item);
-    this.setState({ wishListedItems: wishListedItemsL });
+
+    let allOtherItems = wishListedItemsL.filter(x => {
+      return x.id != item.id;
+    });
+
+    // wishListedItemsL.pop(item);
+    this.setState({ wishListedItems: allOtherItems });
 
     //store to local storage
     localStorage.setItem(

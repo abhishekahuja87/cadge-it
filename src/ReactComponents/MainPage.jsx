@@ -14,7 +14,12 @@ class MainPage extends Component {
     const { SubMenu } = Menu;
     const { Header, Content, Footer } = Layout;
     return (
-      <div style={{ width: "100%", backgroundColor: "lightyellow" }}>
+      <div
+        style={{
+          width: window.innerWidth > 600 ? "88%" : "100%",
+          backgroundColor: "lightyellow"
+        }}
+      >
         <div>
           <MyCarousel />
           <div

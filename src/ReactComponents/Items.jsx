@@ -3,6 +3,7 @@ import myTestData from "./itemCollection1.json";
 import { Card, Carousel, Row, Col, Button } from "antd";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
+import ExifOrientationImg from "react-exif-orientation-img";
 import {
   HeartOutlined,
   ShoppingOutlined,
@@ -33,7 +34,7 @@ class Items extends Component {
   }
 
   render() {
-    console.log(this.props.isAuthed);
+    // console.log(this.props.isAuthed);
     const { photoIndex, isOpen } = this.state;
     const { Meta } = Card;
     if (myTestData === undefined) {
@@ -43,6 +44,7 @@ class Items extends Component {
     if (this.state.isOpen === true) {
       return (
         <Lightbox
+          style={{ imageOrientation: "from-image" }}
           mainSrc={this.state.imageLightBox[this.state.photoIndex]}
           nextSrc={
             this.state.imageLightBox[
@@ -73,22 +75,22 @@ class Items extends Component {
       );
     }
 
-    console.log(myTestData.items);
-    console.log(this.props.match.params.category);
-    console.log(this.props.match.params.subCategory);
+    // console.log(myTestData.items);
+    // console.log(this.props.match.params.category);
+    // console.log(this.props.match.params.subCategory);
 
-    console.log(this.state.category);
-    console.log(this.state.subCategory);
+    // console.log(this.state.category);
+    // console.log(this.state.subCategory);
     let cat = this.state.category;
     let subCat = this.state.subCategory;
 
     let filteredItems = myTestData.items.filter(item => {
       if (item.category === cat && item.subCategory === subCat) return item;
     });
-    console.log(filteredItems);
+    // console.log(filteredItems);
     // return JSON.stringify(adults);
     filteredItems.map(item => {
-      console.log(item.description);
+      // console.log(item.description);
     });
 
     return (
@@ -106,15 +108,15 @@ class Items extends Component {
       //     </div>
       //   </Row>
 
-      <Row style={{ height: "", width: "100%" }}>
+      <Row style={{ width: "100%", backgroundColor: "" }}>
         {filteredItems.map(item => {
           return (
             <Col key={item.id} span={window.innerWidth > 600 ? 8 : 24}>
               <Card
                 style={{
-                  margin: "15%",
+                  margin: "7% 15% 15% 15%",
                   // maxHeight: "500px",
-                  border: "5px solid yellow",
+                  border: "2px solid yellow",
                   backgroundColor: "lightgrey"
                   //   display: "flex",
                   //   justifyContent: "spaceBetween",
@@ -125,8 +127,9 @@ class Items extends Component {
                   <img
                     onClick={e => this.clickImg(item)}
                     style={{
+                      // imageOrientation: "from-image",
                       width: "100%",
-                      height: "50vh", //"450px",
+                      height: "55vh", //"450px",
                       objectFit: "fit"
                     }}
                     alt="example"
@@ -137,18 +140,8 @@ class Items extends Component {
                 actions={[
                   this.state.wishListedItems.filter(e => e.id === item.id)
                     .length === 0 ? (
-                    // <Icon
-                    //   type="heart"
-                    //   onClick={e => this.addToWishList(item)}
-                    // />
                     <HeartOutlined onClick={e => this.addToWishList(item)} />
                   ) : (
-                    // <Icon
-                    //   type="heart"
-                    //   theme="filled"
-                    //   style={{ color: "#1890ff" }}
-                    //   onClick={e => this.removeFromWishlist(item)}
-                    // />
                     <HeartFilled
                       // theme="filled"
                       style={{ color: "#1890ff" }}
@@ -180,7 +173,7 @@ class Items extends Component {
   }
 
   clickImg = item => {
-    console.log(item);
+    // console.log(item);
     let images = item.images;
     this.setState({ isOpen: true });
     this.setState({ imageLightBox: images });
