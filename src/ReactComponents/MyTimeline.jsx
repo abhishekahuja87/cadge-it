@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Timeline } from "antd";
-import { ClockCircleOutlined } from "@ant-design/icons";
 
 class MyTimeline extends Component {
   constructor(props) {

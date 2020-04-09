@@ -24,7 +24,9 @@ class MyCarousel extends Component {
                 height: "70vh",
                 objectFit: "cover"
               }}
-              src={"https://i.picsum.photos/id/419/800/300.jpg"}
+              src={
+                "https://drive.google.com/uc?export=view&id=1l85xA_e_uYUbehD-TtDMmlMpBQG8rXx0"
+              }
               alt=""
             ></img>
           </span>
@@ -40,12 +42,14 @@ class MyCarousel extends Component {
                 height: "70vh",
                 objectFit: "cover"
               }}
-              src={"https://i.picsum.photos/id/420/800/300.jpg"}
+              src={
+                "https://drive.google.com/uc?export=view&id=1YH3BFqH1rfhsMUvx-LNkTAEsL9vHYVHN"
+              }
               alt=""
             ></img>
           </span>
         </div>
-        <div>
+        {/* <div>
           <span>
             <img
               style={{
@@ -60,8 +64,8 @@ class MyCarousel extends Component {
               alt=""
             ></img>
           </span>
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <span>
             <img
               style={{
@@ -76,7 +80,7 @@ class MyCarousel extends Component {
               alt=""
             ></img>
           </span>
-        </div>
+        </div> */}
       </Carousel>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Layout, Menu, Breadcrumb, Icon, Row, Col, Alert } from "antd";
+import { Alert } from "antd";
 import MyCarousel from "./MyCarousel";
 import MyTimeline from "./MyTimeline";
 
@@ -10,9 +10,6 @@ class MainPage extends Component {
   }
 
   render() {
-    const style = { background: "#0092ff", padding: "8px 0" };
-    const { SubMenu } = Menu;
-    const { Header, Content, Footer } = Layout;
     return (
       <div
         style={{

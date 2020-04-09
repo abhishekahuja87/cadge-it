@@ -572,7 +572,7 @@
     {
       "id": "Earings_1001",
       "description": "Gold toned circles earings",
-      "price": 1000,
+      "price": 150,
       "category": "accessories",
       "subCategory": "earings",
       "images": [
@@ -584,7 +584,7 @@
     {
       "id": "Earings_1002",
       "description": "Silver Toned Geometric Drop Earrings",
-      "price": 1000,
+      "price": 150,
       "category": "accessories",
       "subCategory": "earings",
       "images": [
@@ -596,7 +596,7 @@
     {
       "id": "Earings_1003",
       "description": "Pink Geometric Drop Earrings",
-      "price": 1000,
+      "price": 200,
       "category": "accessories",
       "subCategory": "earings",
       "images": [
@@ -608,8 +608,8 @@
     },
     {
       "id": "jewellery_set_1001",
-      "description": "Gold toned circles earings",
-      "price": 1001,
+      "description": "Green and white kundan set",
+      "price": 1200,
       "category": "accessories",
       "subCategory": "jewellery_set",
       "images": [
@@ -622,8 +622,8 @@
     },
     {
       "id": "jewellery_set_1002",
-      "description": "Gold toned circles earings",
-      "price": 1002,
+      "description": "Green Matte-Finish Hand-Painted Jewellery Set",
+      "price": 550,
       "category": "accessories",
       "subCategory": "jewellery_set",
       "images": [
@@ -635,8 +635,8 @@
     },
     {
       "id": "jewellery_set_1003",
-      "description": "Gold toned circles earings",
-      "price": 1003,
+      "description": "Red Beaded Antique Jewellery Set",
+      "price": 500,
       "category": "accessories",
       "subCategory": "jewellery_set",
       "images": [
@@ -649,8 +649,8 @@
     },
     {
       "id": "jewellery_set_1004",
-      "description": "Gold toned circles earings",
-      "price": 1004,
+      "description": "Women Gold and Turqoise Green Meenakari Choker Set",
+      "price": 800,
       "category": "accessories",
       "subCategory": "jewellery_set",
       "images": [
@@ -665,7 +665,7 @@
     {
       "id": "necklace_1001",
       "description": "Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace",
-      "price": 100,
+      "price": 500,
       "category": "accessories",
       "subCategory": "necklace",
       "images": [
@@ -677,8 +677,8 @@
     },
     {
       "id": "necklace_1002",
-      "description": "Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace",
-      "price": 100,
+      "description": "Gold-Toned Green and Teal Necklace",
+      "price": 600,
       "category": "accessories",
       "subCategory": "necklace",
       "images": [
@@ -689,8 +689,8 @@
     },
     {
       "id": "necklace_1003",
-      "description": "Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace",
-      "price": 100,
+      "description": "Peach Coloured & Gold Toned Beaded Collar Necklace",
+      "price": 250,
       "category": "accessories",
       "subCategory": "necklace",
       "images": [
@@ -701,8 +701,8 @@
     },
     {
       "id": "necklace_1004",
-      "description": "Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace",
-      "price": 100,
+      "description": "Silver Alloy Handcrafted Choker Necklace",
+      "price": 200,
       "category": "accessories",
       "subCategory": "necklace",
       "images": [
@@ -713,8 +713,8 @@
     },
     {
       "id": "necklace_1005",
-      "description": "Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace",
-      "price": 100,
+      "description": "Gold-Toned Collar Necklace",
+      "price": 200,
       "category": "accessories",
       "subCategory": "necklace",
       "images": [
@@ -725,8 +725,8 @@
     },
     {
       "id": "necklace_1006",
-      "description": "Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace",
-      "price": 100,
+      "description": "Black & Gold-Toned Beaded Necklace",
+      "price": 400,
       "category": "accessories",
       "subCategory": "necklace",
       "images": [
@@ -737,8 +737,8 @@
     },
     {
       "id": "necklace_1007",
-      "description": "Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace",
-      "price": 100,
+      "description": "Women Multicolored Enamelled Necklace",
+      "price": 200,
       "category": "accessories",
       "subCategory": "necklace",
       "images": [
@@ -749,8 +749,8 @@
     },
     {
       "id": "necklace_1008",
-      "description": "Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace",
-      "price": 100,
+      "description": "Off-White Metal Necklace",
+      "price": 300,
       "category": "accessories",
       "subCategory": "necklace",
       "images": [
@@ -761,8 +761,8 @@
     },
     {
       "id": "necklace_1009",
-      "description": "Silver & Gold-Toned Oxidised Alloy Handcrafted Necklace",
-      "price": 100,
+      "description": "Rose Gold Beaded Statement Necklace",
+      "price": 200,
       "category": "accessories",
       "subCategory": "necklace",
       "images": [
@@ -774,7 +774,7 @@
     },
     {
       "id": "maangtika_1001",
-      "description": "Gold-Toned Green and Teal Necklace",
+      "description": "Golden Alloy Maangtika",
       "price": 100,
       "category": "accessories",
       "subCategory": "maang_tika",
@@ -784,7 +784,7 @@
     },
     {
       "id": "maangtika_1002",
-      "description": "Gold-Toned Green and Teal Necklace",
+      "description": "Silver alloy with pearl work maangtika",
       "price": 100,
       "category": "accessories",
       "subCategory": "maang_tika",

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import myTestData from "./itemCollection1.json";
-import { Card, Carousel, Row, Col, Button } from "antd";
+import { Card, Row, Col, Button } from "antd";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import {
@@ -8,7 +8,6 @@ import {
   ShoppingOutlined,
   HeartFilled
 } from "@ant-design/icons";
-import { grey } from "color-name";
 
 class Items extends Component {
   constructor(props) {
@@ -21,20 +20,22 @@ class Items extends Component {
       isOpen: false,
       imageLightBox: [],
       wishListedItems: this.props.wishListedItems,
-      cartItems: this.props.cartItems
+      cartItems: this.props.cartItems,
+      openedImgDesc: ""
     };
   }
 
-  componentWillReceiveProps() {
+  componentWillReceiveProps(newProps) {
     this.setState({ category: this.props.match.params.category });
     this.setState({ subCategory: this.props.match.params.subCategory });
     this.setState({ cartItems: this.props.cartItems });
-    this.setState({ wishListedItems: this.props.wishListedItems });
+    // this.setState({ wishListedItems: this.props.wishListedItems });
+    this.setState({ wishListedItems: newProps.wishListedItems });
   }
 
   render() {
     // console.log(this.props.isAuthed);
-    const { photoIndex, isOpen } = this.state;
+    // const { photoIndex, isOpen } = this.state;
     const { Meta } = Card;
     if (myTestData === undefined) {
       return "loading";
@@ -43,6 +44,12 @@ class Items extends Component {
     if (this.state.isOpen === true) {
       return (
         <Lightbox
+          // imagePadding={20}
+          clickOutsideToClose={true}
+          imageCaption={
+            this.state.photoIndex + 1 + " / " + this.state.imageLightBox.length
+          }
+          imageTitle={this.state.openedImgDesc}
           style={{ imageOrientation: "from-image" }}
           mainSrc={this.state.imageLightBox[this.state.photoIndex]}
           nextSrc={
@@ -74,39 +81,15 @@ class Items extends Component {
       );
     }
 
-    // console.log(myTestData.items);
-    // console.log(this.props.match.params.category);
-    // console.log(this.props.match.params.subCategory);
-
-    // console.log(this.state.category);
-    // console.log(this.state.subCategory);
     let cat = this.state.category;
     let subCat = this.state.subCategory;
 
     let filteredItems = myTestData.items.filter(item => {
       if (item.category === cat && item.subCategory === subCat) return item;
-    });
-    // console.log(filteredItems);
-    // return JSON.stringify(adults);
-    filteredItems.map(item => {
-      // console.log(item.description);
+      return undefined;
     });
 
     return (
-      //   <Row
-      //     style={{
-      //       height: "92vh",
-      //       width: "100%",
-      //       backgroundColor: "pink",
-      //       border: "5px solid green"
-      //     }}
-      //   >
-      //     <div>
-      //       {this.props.match.params.category}-{" "}
-      //       {this.props.match.params.subCategory}
-      //     </div>
-      //   </Row>
-
       <Row style={{ width: "100%", backgroundColor: "" }}>
         {filteredItems.map(item => {
           return (
@@ -115,8 +98,9 @@ class Items extends Component {
                 style={{
                   margin: "7% 15% 15% 15%",
                   // maxHeight: "500px",
-                  border: "2px solid yellow",
-                  backgroundColor: "lightgrey"
+                  // border: "2px solid yellow",
+                  borderBottom: "3px solid yellow",
+                  backgroundColor: "#d9d9d9"
                   //   display: "flex",
                   //   justifyContent: "spaceBetween",
                   //   flexWrap: "wrap"
@@ -139,11 +123,18 @@ class Items extends Component {
                 actions={[
                   this.state.wishListedItems.filter(e => e.id === item.id)
                     .length === 0 ? (
-                    <HeartOutlined onClick={e => this.addToWishList(item)} />
+                    <HeartOutlined
+                      style={{ fontSize: "22px", marginTop: "6px" }}
+                      onClick={e => this.addToWishList(item)}
+                    />
                   ) : (
                     <HeartFilled
                       // theme="filled"
-                      style={{ color: "#1890ff" }}
+                      style={{
+                        color: "#1890ff",
+                        fontSize: "22px",
+                        marginTop: "6px"
+                      }}
                       onClick={e => this.removeFromWishlist(item)}
                     />
                   ),
@@ -172,34 +163,22 @@ class Items extends Component {
   }
 
   clickImg = item => {
-    // console.log(item);
     let images = item.images;
     this.setState({ isOpen: true });
     this.setState({ imageLightBox: images });
+    this.setState({ openedImgDesc: item.description });
   };
 
   addToWishList = item => {
     this.props.addToWishList(item);
-    // console.log(item);
-    // let wishListedItemsL = this.state.wishListedItems;
-    // wishListedItemsL.push(item);
-    // this.setState({ wishListedItems: wishListedItemsL });
   };
 
   removeFromWishlist = item => {
     this.props.removeFromWishlist(item);
-    // console.log(item);
-    // let wishListedItemsL = this.state.wishListedItems;
-    // wishListedItemsL.pop(item);
-    // this.setState({ wishListedItems: wishListedItemsL });
   };
 
   addToCart = item => {
     this.props.addToCart(item);
-    // console.log(item);
-    // let addedCartItemsL = this.state.cartItems;
-    // addedCartItemsL.push(item);
-    // this.setState({ addedCartItems: addedCartItemsL });
   };
 }
 

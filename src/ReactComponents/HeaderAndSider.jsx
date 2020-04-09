@@ -3,45 +3,24 @@ import {
   Layout,
   Affix,
   Menu,
-  Breadcrumb,
-  Avatar,
   Badge,
-  Row,
-  Col,
   Drawer,
   Button,
   Card,
-  InputNumber,
-  Statistic,
   Form,
   Input,
-  Checkbox,
   DatePicker,
   message
 } from "antd";
 import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
   CrownOutlined,
   EnvironmentOutlined,
-  PieChartOutlined,
-  DesktopOutlined,
-  TeamOutlined,
-  FileOutlined,
   ShoppingOutlined,
   HeartOutlined,
   CloseSquareOutlined
 } from "@ant-design/icons";
 import Items from "./Items";
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Redirect,
-  HashRouter
-} from "react-router-dom";
-// import Items1 from "./Items1";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import emailjs from "emailjs-com";
 import MainPage from "./MainPage";
 import Contact from "./Contact";
@@ -62,8 +41,6 @@ class HeaderAndSider extends Component {
   }
 
   render() {
-    // console.log(this.props);
-
     if (this.state.showCart === true) {
       let total = 0;
       return (
@@ -71,7 +48,6 @@ class HeaderAndSider extends Component {
           {this.getHeaderAndSiderPane()}
           <Drawer
             title={"Cart(" + this.state.cartItems.length + ")"}
-            // width="30%" //{520}
             width={window.innerWidth > 600 ? "30%" : "100%"}
             s
             placement="right"
@@ -79,13 +55,10 @@ class HeaderAndSider extends Component {
             onClose={this.onCartClose}
             visible={this.state.showCart}
           >
-            {/* {this.getItems(this.props.cartItems)} */}
             {this.state.cartItems.map(item => {
               total = total + item.price + item.price * 5;
               return this.getCartViewItem(item);
             })}
-            {/* <p>{JSON.stringify(this.props.cartItems)}</p> */}
-
             <div
               style={{
                 position: "absolute",
@@ -111,7 +84,6 @@ class HeaderAndSider extends Component {
                 Cancel
               </Button>
               <Button
-                // onClick={this.onplaceOrder}
                 onClick={e => this.showOrderPlaceDrawer(total)}
                 type="primary"
               >
@@ -121,7 +93,6 @@ class HeaderAndSider extends Component {
 
             <Drawer
               title="Place Order"
-              // width="20%" //{320}
               width={window.innerWidth > 600 ? "20%" : "90%"}
               closable={true}
               onClose={this.onOrderPlaceClose}
@@ -140,7 +111,6 @@ class HeaderAndSider extends Component {
           {this.getHeaderAndSiderPane()}
           <Drawer
             title={"Wishlist(" + this.state.wishListedItems.length + ")"}
-            // width="40%"
             width={window.innerWidth > 600 ? "30%" : "100%"}
             placement="right"
             closable={true}
@@ -163,7 +133,7 @@ class HeaderAndSider extends Component {
                 borderRadius: "0 0 4px 4px"
               }}
             >
-              <Button onClick={this.onClose} type="primary">
+              <Button onClick={this.onWishlistClose} type="primary">
                 OK
               </Button>
             </div>
@@ -177,7 +147,7 @@ class HeaderAndSider extends Component {
 
   getHeaderAndSiderPane = () => {
     const { SubMenu } = Menu;
-    const { Header, Footer, Sider, Content } = Layout;
+    const { Header, Sider } = Layout;
     return (
       <Layout>
         <Affix>
@@ -188,12 +158,6 @@ class HeaderAndSider extends Component {
             }}
           >
             <div className="logo" onClick={this.goToHome}>
-              {/* <img
-                style={{ marginRight: "10px" }}
-                src={"./logo.png"}
-                width={50}
-                height={50}
-              ></img> */}
               CadgeIt
             </div>
             <Menu
@@ -313,12 +277,7 @@ class HeaderAndSider extends Component {
             </Sider>
           </Affix>
 
-          {/* <Header style={{ width: "100%", backgroundColor: "orange" }}>
-Header1
-</Header> */}
-
           <BrowserRouter basename={process.env.PUBLIC_URL}>
-            {/* <HashRouter basename="/"> */}
             <Switch>
               <Route path="/" exact component={MainPage} />
               <Route path="/contact" component={Contact} />
@@ -339,22 +298,6 @@ Header1
               />
             </Switch>
           </BrowserRouter>
-
-          {/* <Content
-      style={{
-        backgroundColor: "lightYellow",
-        height: "92vh"
-        // margin: "5px"
-      }}
-    >
-      <div
-        className="site-layout-background"
-        style={{ padding: 24, minHeight: 360 }}
-      >
-        {window.location.pathname}
-      </div>
-    </Content> */}
-          {/* <Footer>Footer</Footer> */}
         </Layout>
       </Layout>
     );
@@ -428,33 +371,21 @@ Header1
 
   onFinish = values => {
     let items = this.props.cartItems;
-    console.log(this.props.cartItems);
-
-    // console.log("Success:", values);
-
-    // this.removeAllFromCart();
-
     this.setState({ showCart: false, showChildrenDrawer: false });
-
-    // console.log("place order click");
-
     let itemsStr = "";
-
-    items.map(i => {
+    items.forEach(i => {
       itemsStr = itemsStr + i.description + "(id-" + i.id + ")";
       itemsStr = itemsStr + ",";
     });
-
     let custName = values.name;
     let custEmail = values.email;
     let custContactNo = values.contactno;
     let custAddress = values.user.address;
-    let messageToCust = "to be decided";
+    // let messageToCust = "to be decided";
     let notesFromCust = values.user.notes;
-    // let startDate = values["start-date"][0].format("YYYY-MM-DD");
 
     let ownerName = "CadgeIt";
-    let ownerEmail = "cadgeit@gmail.com";
+    // let ownerEmail = "cadgeit@gmail.com";
 
     var send_to_owner_template = {
       to_name: ownerName,
@@ -490,7 +421,6 @@ Header1
         function(response) {
           // console.log("SUCCESS!", response.status, response.text);
           this.removeAllFromCart();
-
           message.success(
             "The email with your order details has been sent. You will receive an email for the same with details.",
             10
@@ -544,9 +474,9 @@ Header1
       wrapperCol: { offset: 8, span: 16 }
     };
 
-    const config = {
-      rules: [{ type: "object", required: true }]
-    };
+    // const config = {
+    //   rules: [{ type: "object", required: true }]
+    // };
 
     return (
       <div>
@@ -600,41 +530,6 @@ Header1
             <DatePicker onChange={this.onChange} />
             <div>End Date will be 3 days from the Start Date</div>
           </Form.Item>
-
-          {/* <Form.Item
-            name="range-picker"
-            label="RangePicker"
-            {...rangeConfig}
-            // validateTrigger={this.onNumberChange}
-            on
-          >
-            <RangePicker />
-          </Form.Item> */}
-
-          {/* <Form.Item
-            name={["date"]}
-            label="date"
-            // rules={[{ required: true, message: "Please Select a Date!" }]}
-          >
-            <DatePicker onChange={this.onChange} />
-            <div>End Date will be 3 days from the Start Date</div>
-          </Form.Item> */}
-
-          {/* <Form.Item
-            name="date-picker"
-            label="DatePicker"
-            rules={[
-              {
-                type: "array",
-                required: true,
-                message: "Please input your Start Date!"
-              }
-            ]}
-          >
-            <DatePicker />
-            <div>End Date will be 3 days from the Start Date</div>
-          </Form.Item> */}
-
           <Form.Item {...tailLayout}>
             <Button type="primary" htmlType="submit">
               Submit
@@ -683,18 +578,8 @@ Header1
   };
 
   contactPage = () => {
-    // console.log("about page");
-    // return <Redirect to="/about/" />;
-    // this.history.pushState(null, "/about/");
-    // this.props.history.push("about/");
-    // this.context.router.push("/some-path");
     window.location = "/contact";
   };
-
-  // clothes_ethnicWear = () => {
-  //   console.log("clothes_ethnicWear");
-  //   window.location = "/items/clothes/ethnicWear";
-  // };
 
   clothes_ethnicWear = () => {
     // console.log("clothes_ethnicWear");
@@ -790,12 +675,7 @@ Header1
   getCartWishlistItem = item => {
     return (
       <React.Fragment>
-        <Card
-          size="small"
-          title={item.description}
-          // extra={<a href="#">Link to Item</a>}
-          style={{ width: "100%" }}
-        >
+        <Card size="small" title={item.description} style={{ width: "100%" }}>
           <React.Fragment>
             <img
               style={{
@@ -842,23 +722,13 @@ Header1
   };
 
   removeAllFromCart = () => {
-    let a = this.props.cartItems;
-    // console.log(a);
-    // console.log(a[1]);
-    // console.log(a[0]);
-    // a.map(i => {
-    //   console.log("-----item------");
-    //   console.log(i);
-    //   this.removeFromCart(i);
-    //   console.log("========item======");
-    // });
     this.props.removeAllFromCart();
   };
 
-  removeFromWishlist = item => {
-    // console.log(item);
-    this.props.removeFromWishlist(item);
-  };
+  // removeFromWishlist = item => {
+  //   // console.log(item);
+  //   this.props.removeFromWishlist(item);
+  // };
 
   // tpm
   addToWishList = item => {
@@ -900,7 +770,7 @@ Header1
     let cartItemsL = this.state.cartItems;
 
     let allOtherItems = cartItemsL.filter(x => {
-      return x.id != item.id;
+      return x.id !== item.id;
     });
 
     // cartItemsL.pop(item);
@@ -916,7 +786,7 @@ Header1
     let wishListedItemsL = this.state.wishListedItems;
 
     let allOtherItems = wishListedItemsL.filter(x => {
-      return x.id != item.id;
+      return x.id !== item.id;
     });
 
     // wishListedItemsL.pop(item);
