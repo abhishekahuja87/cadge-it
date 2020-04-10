@@ -6,6 +6,10 @@ class MyCarousel extends Component {
     super(props);
     this.state = {};
   }
+
+  // working edited
+  // "https://drive.google.com/uc?export=view&id=1l85xA_e_uYUbehD-TtDMmlMpBQG8rXx0"
+  // "https://drive.google.com/uc?export=view&id=1YH3BFqH1rfhsMUvx-LNkTAEsL9vHYVHN"
   render() {
     return (
       <Carousel
@@ -25,10 +29,43 @@ class MyCarousel extends Component {
                 objectFit: "cover"
               }}
               src={
-                "https://drive.google.com/uc?export=view&id=1l85xA_e_uYUbehD-TtDMmlMpBQG8rXx0"
+                "https://drive.google.com/uc?export=view&id=1tCjSpuTub_CLYo06m4e5dDe8vUEdl0qU"
               }
               alt=""
             ></img>
+            <span
+              style={{
+                background: "rgba(0, 0, 0, 0.8)",
+                position: "absolute",
+                bottom: window.innerWidth > 600 ? "30%" : "35%",
+                right: window.innerWidth > 600 ? "28%" : "9%",
+                // backgroundColor: "black",
+                color: "white",
+                paddingLeft: "5%",
+                paddingRight: "5%"
+              }}
+            >
+              <p
+                style={{
+                  marginBottom: "10px",
+                  color: "lightYellow",
+                  fontSize: window.innerWidth > 600 ? "40px" : "20px"
+                }}
+              >
+                Want to Dress differently Today?
+              </p>
+              <p
+                style={{
+                  marginBottom: "10px",
+                  marginLeft: "20%",
+                  marginRight: "20%",
+                  color: "lightYellow",
+                  fontSize: window.innerWidth > 600 ? "35px" : "30px"
+                }}
+              >
+                {"Rent it out here!"}
+              </p>
+            </span>
           </span>
         </div>
         <div>
@@ -43,10 +80,43 @@ class MyCarousel extends Component {
                 objectFit: "cover"
               }}
               src={
-                "https://drive.google.com/uc?export=view&id=1YH3BFqH1rfhsMUvx-LNkTAEsL9vHYVHN"
+                "https://drive.google.com/uc?export=view&id=1EIIAno_ny3wHTWVhlCym8fwZgmYHsAe8"
               }
               alt=""
             ></img>
+            <span
+              style={{
+                background: "rgba(0, 0, 0, 0.8)",
+                position: "absolute",
+                bottom: window.innerWidth > 600 ? "30%" : "35%",
+                right: window.innerWidth > 600 ? "30%" : "17%",
+                // backgroundColor: "black",
+                color: "white",
+                paddingLeft: "5%",
+                paddingRight: "5%"
+              }}
+            >
+              <p
+                style={{
+                  marginBottom: "10px",
+                  color: "lightYellow",
+                  fontSize: window.innerWidth > 600 ? "40px" : "16px"
+                }}
+              >
+                Bored of your Collection??
+              </p>
+              <p
+                style={{
+                  marginBottom: "10px",
+                  marginLeft: "20%",
+                  marginRight: "20%",
+                  color: "lightYellow",
+                  fontSize: window.innerWidth > 600 ? "35px" : "30px"
+                }}
+              >
+                {"Rent it from us!"}
+              </p>
+            </span>
           </span>
         </div>
         {/* <div>

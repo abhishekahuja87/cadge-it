@@ -98,10 +98,10 @@
       "category": "clothes",
       "subCategory": "ethnicWear",
       "images": [
+        "https://drive.google.com/uc?export=view&id=1Eu1rq_Ama3m7hHnhRh7cm-iZeftlAEQT",
         "https://drive.google.com/uc?export=view&id=12OaYsZ3osx201APzXFnJbloOEFsMz8rt",
         "https://drive.google.com/uc?export=view&id=1AohC5xIVVYKkRNfayM0P5Hdlj0kg1SFE",
-        "https://drive.google.com/uc?export=view&id=1KFD1omqlPvXFJDQRlSLZR93yk3GzwLX6",
-        "https://drive.google.com/uc?export=view&id=1Eu1rq_Ama3m7hHnhRh7cm-iZeftlAEQT"
+        "https://drive.google.com/uc?export=view&id=1KFD1omqlPvXFJDQRlSLZR93yk3GzwLX6"
       ]
     },
     {
@@ -112,10 +112,10 @@
       "category": "clothes",
       "subCategory": "ethnicWear",
       "images": [
+        "https://drive.google.com/uc?export=view&id=17Sp8lXabI8FtUaQt32YV1soLpEgMo-ky",
         "https://drive.google.com/uc?export=view&id=1YFzFH4o7rOQ5wFO_kH1MgPo55dC9XOHe",
         "https://drive.google.com/uc?export=view&id=1l2hlkeKN-IXLT3W2t5tYYRhwHCN2xzrK",
-        "https://drive.google.com/uc?export=view&id=14XDzQC5qqa8gkkG5IchZuE_-PbRyqIe8",
-        "https://drive.google.com/uc?export=view&id=17Sp8lXabI8FtUaQt32YV1soLpEgMo-ky"
+        "https://drive.google.com/uc?export=view&id=14XDzQC5qqa8gkkG5IchZuE_-PbRyqIe8"
       ]
     },
     {
@@ -126,9 +126,9 @@
       "category": "clothes",
       "subCategory": "ethnicWear",
       "images": [
+        "https://drive.google.com/uc?export=view&id=1hzRQlVkN--yA5FxE1B4uv-GRP9qjRGgv",
         "https://drive.google.com/uc?export=view&id=15IkjaDq9crq0D22dXZoswtt-vzPvxyLl",
-        "https://drive.google.com/uc?export=view&id=17B1OFzUt06OOqjWUe2mbDJzv6Dgg5WJl",
-        "https://drive.google.com/uc?export=view&id=1hzRQlVkN--yA5FxE1B4uv-GRP9qjRGgv"
+        "https://drive.google.com/uc?export=view&id=17B1OFzUt06OOqjWUe2mbDJzv6Dgg5WJl"
       ]
     },
     {
@@ -301,20 +301,20 @@
       ]
     },
     {
-      "id": "gown1",
+      "id": "gown_1001",
       "description": "Blue silk full flare gown",
       "price": 1200,
       "sellprice": 6000,
       "category": "clothes",
       "subCategory": "fusionWear",
       "images": [
+        "https://drive.google.com/uc?export=view&id=1vLIvJyTwdO7LsqOt8XoL3_LKAWwsHd2P",
         "https://drive.google.com/uc?export=view&id=1ozlbgTXjlbYJhWV_Ie5uqf3ALHKVLkNP",
-        "https://drive.google.com/uc?export=view&id=1Eiw31Mc3KHTF0bPF8A1zLHdbuyL0LxR-",
-        "https://drive.google.com/uc?export=view&id=1vLIvJyTwdO7LsqOt8XoL3_LKAWwsHd2P"
+        "https://drive.google.com/uc?export=view&id=1Eiw31Mc3KHTF0bPF8A1zLHdbuyL0LxR-"
       ]
     },
     {
-      "id": "gown2",
+      "id": "gown_1002",
       "description": "Black Golden Brocade print gown",
       "price": 1100,
       "sellprice": 6000,
@@ -327,7 +327,7 @@
       ]
     },
     {
-      "id": "gown3",
+      "id": "gown_1003",
       "description": "Blue Designer One Peice",
       "price": 1000,
       "sellprice": 6000,
@@ -341,7 +341,7 @@
       ]
     },
     {
-      "id": "gown4",
+      "id": "gown_1004",
       "description": "Red raw silk gown with beige mirror work yoke",
       "price": 800,
       "sellprice": 6000,
@@ -353,15 +353,15 @@
       ]
     },
     {
-      "id": "gown5",
+      "id": "gown_1005",
       "description": "Blue centre slit long dress with grey printed skirt",
       "price": 900,
       "sellprice": 6500,
       "category": "clothes",
       "subCategory": "fusionWear",
       "images": [
-        "https://drive.google.com/uc?export=view&id=1LiJJa_mVysvJQfpi_fMqlZWP8TOCleXG",
         "https://drive.google.com/uc?export=view&id=1RXJMztDrH-vQN3Zxvs1orzYkGgnEpqeX",
+        "https://drive.google.com/uc?export=view&id=1LiJJa_mVysvJQfpi_fMqlZWP8TOCleXG",
         "https://drive.google.com/uc?export=view&id=1hlrlS4Lvfyf9VLV2aD848ieR2FGIDHHn"
       ]
     },
@@ -426,12 +426,9 @@
       "category": "clothes",
       "subCategory": "westernWear",
       "images": [
-        "https://drive.google.com/uc?export=view&id=1n3IqL_iBZUm9hxSO2WiWBYWXEjS5jyPv",
-        "https://drive.google.com/uc?export=view&id=1rGwrsx16s_C68iRo2qLN66n63somWnqo",
-        "https://drive.google.com/uc?export=view&id=1LqmMa0vjYeySDyRkDCdBd56GhoCeoYss",
-        "https://drive.google.com/uc?export=view&id=1GvY1M7btuQoiyp_zNvZjdjYlMnm3Iyrb",
-        "https://drive.google.com/uc?export=view&id=1S3rhe5kK5g85H9ziyf335HnivOBVAqZK",
-        "https://drive.google.com/uc?export=view&id=1FohlZwB7IOZsyEEs7GEz_sunX6fUjBSE"
+        "https://drive.google.com/uc?export=view&id=1WG_76QPPgkopk3s2QDeh4-1wbeRxKCos",
+        "https://drive.google.com/uc?export=view&id=1mOA2-uL-OZ0AxQNvfdXgkjPA5sEuV4EF",
+        "https://drive.google.com/uc?export=view&id=1Ee6lxio6JRC2cLxLCWMVymSzzf-f7fvW"
       ]
     },
     {
@@ -553,8 +550,8 @@
       "category": "clothes",
       "subCategory": "westernWear",
       "images": [
-        "https://drive.google.com/uc?export=view&id=1BURMouWC2t0xMTOiJJOiIuV7TqwmrtPf",
-        "https://drive.google.com/uc?export=view&id=1TC0kSQG32GFgHrZ03uAiumU1D47IcxXx"
+        "https://drive.google.com/uc?export=view&id=1TC0kSQG32GFgHrZ03uAiumU1D47IcxXx",
+        "https://drive.google.com/uc?export=view&id=1BURMouWC2t0xMTOiJJOiIuV7TqwmrtPf"
       ]
     },
     {

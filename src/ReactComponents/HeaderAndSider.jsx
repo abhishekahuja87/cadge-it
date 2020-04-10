@@ -370,7 +370,7 @@ class HeaderAndSider extends Component {
   };
 
   onFinish = values => {
-    let items = this.props.cartItems;
+    let items = this.state.cartItems;
     this.setState({ showCart: false, showChildrenDrawer: false });
     let itemsStr = "";
     items.forEach(i => {
@@ -410,6 +410,7 @@ class HeaderAndSider extends Component {
       start_date: this.state.startDate
     };
 
+    this.removeAllFromCart();
     emailjs
       .send(
         "default_service",
@@ -418,21 +419,39 @@ class HeaderAndSider extends Component {
         "user_vxi82ZFH1k9v1mk8zd6Tm"
       )
       .then(
-        function(response) {
-          // console.log("SUCCESS!", response.status, response.text);
+        response => {
           this.removeAllFromCart();
           message.success(
             "The email with your order details has been sent. You will receive an email for the same with details.",
             10
           );
         },
-        function(error) {
-          // console.log("FAILED...", error);
+        error => {
           message.error(
-            "The order details could not be sent. please try again",
+            "The order details could not be sent. please try again, " + error,
             10
           );
         }
+
+        // function(response) {
+        //   // console.log("SUCCESS!", response.status, response.text);
+
+        //   this.removeAllFromCart();
+
+        //   message.success(
+        //     "The email with your order details has been sent. You will receive an email for the same with details.",
+        //     10
+        //   );
+        //   emailSuccess = true;
+        // },
+        // function(error) {
+        //   // console.log("FAILED...", error);
+        //   message.error(
+        //     "The order details could not be sent. please try again, " + error,
+        //     10
+        //   );
+        //   emailSuccess = false;
+        // }
       );
 
     emailjs
@@ -531,7 +550,12 @@ class HeaderAndSider extends Component {
             <div>End Date will be 3 days from the Start Date</div>
           </Form.Item>
           <Form.Item {...tailLayout}>
-            <Button type="primary" htmlType="submit">
+            <Button
+              type="primary"
+              htmlType="submit"
+              // onClick={this.onplaceOrder()}
+              // onClick={e => this.onFinish(e)}
+            >
               Submit
             </Button>
           </Form.Item>
@@ -721,9 +745,9 @@ class HeaderAndSider extends Component {
     this.props.removeFromCart(item);
   };
 
-  removeAllFromCart = () => {
-    this.props.removeAllFromCart();
-  };
+  // removeAllFromCart = () => {
+  //   this.props.removeAllFromCart();
+  // };
 
   // removeFromWishlist = item => {
   //   // console.log(item);
