@@ -10,9 +10,13 @@ class MyCarousel extends Component {
   // working edited
   // "https://drive.google.com/uc?export=view&id=1l85xA_e_uYUbehD-TtDMmlMpBQG8rXx0"
   // "https://drive.google.com/uc?export=view&id=1YH3BFqH1rfhsMUvx-LNkTAEsL9vHYVHN"
+
+  // https://drive.google.com/uc?export=view&id=1soaqxA6xPpuiZpBTq1yVntWK_tbthAho
+  // https://drive.google.com/uc?export=view&id=1bYh19Io1kJQrvlIDB-LhTddikrFyvK9B
   render() {
     return (
       <Carousel
+        pauseOnHover={false}
         autoplay
         fade={true}
         //   afterChange={onChange}
@@ -29,7 +33,8 @@ class MyCarousel extends Component {
                 objectFit: "cover"
               }}
               src={
-                "https://drive.google.com/uc?export=view&id=1tCjSpuTub_CLYo06m4e5dDe8vUEdl0qU"
+                // "https://drive.google.com/uc?export=view&id=1tCjSpuTub_CLYo06m4e5dDe8vUEdl0qU"
+                "https://drive.google.com/uc?export=view&id=1soaqxA6xPpuiZpBTq1yVntWK_tbthAho"
               }
               alt=""
             ></img>
@@ -37,8 +42,8 @@ class MyCarousel extends Component {
               style={{
                 background: "rgba(0, 0, 0, 0.8)",
                 position: "absolute",
-                bottom: window.innerWidth > 600 ? "30%" : "35%",
-                right: window.innerWidth > 600 ? "28%" : "9%",
+                bottom: window.innerWidth > 600 ? "30%" : "25%",
+                right: window.innerWidth > 600 ? "28%" : "14%",
                 // backgroundColor: "black",
                 color: "white",
                 paddingLeft: "5%",
@@ -49,7 +54,7 @@ class MyCarousel extends Component {
                 style={{
                   marginBottom: "10px",
                   color: "lightYellow",
-                  fontSize: window.innerWidth > 600 ? "40px" : "20px"
+                  fontSize: window.innerWidth > 600 ? "40px" : "16px"
                 }}
               >
                 Want to Dress differently Today?
@@ -80,7 +85,8 @@ class MyCarousel extends Component {
                 objectFit: "cover"
               }}
               src={
-                "https://drive.google.com/uc?export=view&id=1EIIAno_ny3wHTWVhlCym8fwZgmYHsAe8"
+                // "https://drive.google.com/uc?export=view&id=1EIIAno_ny3wHTWVhlCym8fwZgmYHsAe8"
+                "https://drive.google.com/uc?export=view&id=1bYh19Io1kJQrvlIDB-LhTddikrFyvK9B"
               }
               alt=""
             ></img>
@@ -88,7 +94,7 @@ class MyCarousel extends Component {
               style={{
                 background: "rgba(0, 0, 0, 0.8)",
                 position: "absolute",
-                bottom: window.innerWidth > 600 ? "30%" : "35%",
+                bottom: window.innerWidth > 600 ? "30%" : "25%",
                 right: window.innerWidth > 600 ? "30%" : "17%",
                 // backgroundColor: "black",
                 color: "white",

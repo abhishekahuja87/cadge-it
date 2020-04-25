@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import HeaderAndSider from "./ReactComponents/HeaderAndSider";
+import ReactGA from "react-ga";
 
 class App extends Component {
   constructor(props) {
@@ -7,7 +8,22 @@ class App extends Component {
     this.state = {};
   }
 
+  initializeAnalytics() {
+    ReactGA.initialize("164509797");
+    ReactGA.pageview("/");
+    ReactGA.pageview("/HomePage");
+    ReactGA.pageview("/items/clothes/ethnicWear");
+    ReactGA.pageview("/items/clothes/fusionWear");
+    ReactGA.pageview("/items/clothes/westernWear");
+    ReactGA.pageview("/items/accessories/earings");
+    ReactGA.pageview("/items/accessories/jewellery_set");
+    ReactGA.pageview("/items/accessories/necklace");
+    ReactGA.pageview("/items/accessories/maang_tika");
+    ReactGA.pageview("/contact");
+  }
+
   render() {
+    this.initializeAnalytics();
     return (
       <HeaderAndSider
         wishListedItems={this.state.wishListedItems}

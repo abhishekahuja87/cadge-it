@@ -27,7 +27,7 @@ class MainPage extends Component {
               textAlign: "center"
             }}
           >
-            How it Works
+            How to Rent from us
           </div>
 
           <span>

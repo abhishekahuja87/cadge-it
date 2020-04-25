@@ -10,11 +10,12 @@ import {
   Form,
   Input,
   DatePicker,
-  message
+  message,
+  Avatar
 } from "antd";
 import {
   CrownOutlined,
-  EnvironmentOutlined,
+  SkinOutlined,
   ShoppingOutlined,
   HeartOutlined,
   CloseSquareOutlined
@@ -73,7 +74,7 @@ class HeaderAndSider extends Component {
               }}
             >
               <span style={{ fontWeight: "bold", marginRight: "20px" }}>
-                Total Payable : {total}
+                Total: {total}
               </span>
               <Button
                 style={{
@@ -196,7 +197,7 @@ class HeaderAndSider extends Component {
                 <SubMenu
                   title={
                     <span>
-                      <CrownOutlined />
+                      <SkinOutlined />
                       Clothes For Her
                     </span>
                   }
@@ -226,7 +227,7 @@ class HeaderAndSider extends Component {
                 <SubMenu
                   title={
                     <span>
-                      <EnvironmentOutlined />
+                      <CrownOutlined />
                       Jewellery
                     </span>
                   }
@@ -236,7 +237,7 @@ class HeaderAndSider extends Component {
                     key="cat2opt1"
                     onClick={this.accessories_earings}
                   >
-                    Earings
+                    Earrings
                   </Menu.Item>
                   <Menu.Item
                     style={{ color: "yellow" }}
@@ -266,6 +267,7 @@ class HeaderAndSider extends Component {
                 <Menu.Item key="nav-wishlist" onClick={this.showWishlistDrawer}>
                   <span style={{ margin: "0px", lineHeight: "60px" }}>
                     <Badge
+                      showZero
                       style={{ backgroundColor: "yellow", color: "black" }}
                       count={this.state.wishListedItems.length}
                     >
@@ -649,15 +651,24 @@ class HeaderAndSider extends Component {
   }
 
   getCartViewItem = item => {
+    const { Meta } = Card;
     return (
       <React.Fragment>
         <Card
           size="small"
           title={item.description}
-          // extra={<a href="#">Link to Item</a>}
+          extra={
+            <Button
+              onClick={e => this.removeFromCart(item)}
+              type="primary"
+              // shape="circle"
+              icon={<CloseSquareOutlined />}
+              style={{ marginLeft: "5px" }}
+            />
+          }
           style={{ width: "100%" }}
         >
-          <React.Fragment>
+          {/* <React.Fragment>
             <img
               style={{
                 width: "15%",
@@ -689,7 +700,42 @@ class HeaderAndSider extends Component {
               icon={<CloseSquareOutlined />}
               style={{ marginLeft: "5px" }}
             />
-          </React.Fragment>
+          </React.Fragment> */}
+
+          <Meta
+            avatar={
+              <Avatar
+                style={{
+                  // width: "15%",
+                  height: "58px"
+                  // objectFit: "fit"
+                }}
+                shape="square"
+                size="large"
+                src={item.images[0]}
+              />
+            }
+            title={
+              <React.Fragment>
+                <span
+                  style={{
+                    margin: "0"
+                  }}
+                >
+                  Rs {item.price + item.price * 5}
+                </span>
+              </React.Fragment>
+            }
+            description={
+              <React.Fragment>
+                <span
+                // style={{ fontSize: "15px", marginLeft: "5px" }}
+                >
+                  (Rent: {item.price}, Deposit: {item.price * 5})
+                </span>
+              </React.Fragment>
+            }
+          />
         </Card>
         <br />
       </React.Fragment>
@@ -697,10 +743,25 @@ class HeaderAndSider extends Component {
   };
 
   getCartWishlistItem = item => {
+    const { Meta } = Card;
     return (
       <React.Fragment>
-        <Card size="small" title={item.description} style={{ width: "100%" }}>
-          <React.Fragment>
+        <Card
+          size="small"
+          title={item.description}
+          extra={
+            <Button
+              onClick={e => this.removeFromWishlist(item)}
+              type="primary"
+              // shape="circle"
+              // icon="close-square"
+              icon={<CloseSquareOutlined />}
+              style={{ marginLeft: "5px" }}
+            />
+          }
+          style={{ width: "100%" }}
+        >
+          {/* <React.Fragment>
             <img
               style={{
                 width: "15%",
@@ -733,7 +794,42 @@ class HeaderAndSider extends Component {
               icon={<CloseSquareOutlined />}
               style={{ marginLeft: "5px" }}
             />
-          </React.Fragment>
+          </React.Fragment> */}
+
+          <Meta
+            avatar={
+              <Avatar
+                style={{
+                  // width: "15%",
+                  height: "55px"
+                  // objectFit: "fit"
+                }}
+                shape="square"
+                size="large"
+                src={item.images[0]}
+              />
+            }
+            title={
+              <React.Fragment>
+                <span
+                  style={{
+                    margin: "0"
+                  }}
+                >
+                  Rs {item.price + item.price * 5}
+                </span>
+              </React.Fragment>
+            }
+            description={
+              <React.Fragment>
+                <span
+                // style={{ fontSize: "15px", marginLeft: "5px" }}
+                >
+                  (Rent: {item.price}, Deposit: {item.price * 5})
+                </span>
+              </React.Fragment>
+            }
+          />
         </Card>
         <br />
       </React.Fragment>
