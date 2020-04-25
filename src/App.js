@@ -9,7 +9,7 @@ class App extends Component {
   }
 
   initializeAnalytics() {
-    ReactGA.initialize("G-S9WC968THC");
+    ReactGA.initialize("UA-164601793-1");
     ReactGA.pageview("/");
     ReactGA.pageview("/HomePage");
     ReactGA.pageview("/items/clothes/ethnicWear");

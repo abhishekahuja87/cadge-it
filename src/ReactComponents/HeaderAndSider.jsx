@@ -25,14 +25,19 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import emailjs from "emailjs-com";
 import MainPage from "./MainPage";
 import Contact from "./Contact";
+import {
+  _allWishListedItemsLocalStorage,
+  _allCartItemsLocalStorage
+} from "./Constants";
 
 class HeaderAndSider extends Component {
   constructor(props) {
     super(props);
     this.state = {
       wishListedItems:
-        JSON.parse(localStorage.getItem("allWishListedItems")) || [],
-      cartItems: JSON.parse(localStorage.getItem("allCartItems1")) || [],
+        JSON.parse(localStorage.getItem(_allWishListedItemsLocalStorage)) || [],
+      cartItems:
+        JSON.parse(localStorage.getItem(_allCartItemsLocalStorage)) || [],
       showCart: false,
       showWishlist: false,
       showChildrenDrawer: false,
@@ -836,10 +841,10 @@ class HeaderAndSider extends Component {
     );
   };
 
-  removeFromCart = item => {
-    // console.log(item);
-    this.props.removeFromCart(item);
-  };
+  // removeFromCart = item => {
+  //   // console.log(item);
+  //   this.props.removeFromCart(item);
+  // };
 
   // removeAllFromCart = () => {
   //   this.props.removeAllFromCart();
@@ -860,7 +865,7 @@ class HeaderAndSider extends Component {
 
     //store to local storage
     localStorage.setItem(
-      "allWishListedItems",
+      _allWishListedItemsLocalStorage,
       JSON.stringify(this.state.wishListedItems)
     );
   };
@@ -873,7 +878,10 @@ class HeaderAndSider extends Component {
     this.setState({ cartItems: cartItemsL });
 
     //store to local storage
-    localStorage.setItem("allCartItems1", JSON.stringify(this.state.cartItems));
+    localStorage.setItem(
+      _allCartItemsLocalStorage,
+      JSON.stringify(this.state.cartItems)
+    );
   };
 
   removeAllFromCart = () => {
@@ -881,7 +889,7 @@ class HeaderAndSider extends Component {
     this.setState({ cartItems: a });
 
     //store to local storage
-    localStorage.setItem("allCartItems1", JSON.stringify(a));
+    localStorage.setItem(_allCartItemsLocalStorage, JSON.stringify(a));
   };
 
   removeFromCart = item => {
@@ -897,7 +905,10 @@ class HeaderAndSider extends Component {
     this.setState({ cartItems: allOtherItems });
 
     //store to local storage
-    localStorage.setItem("allCartItems1", JSON.stringify(this.state.cartItems));
+    localStorage.setItem(
+      _allCartItemsLocalStorage,
+      JSON.stringify(allOtherItems)
+    );
   };
 
   removeFromWishlist = item => {
@@ -914,8 +925,8 @@ class HeaderAndSider extends Component {
 
     //store to local storage
     localStorage.setItem(
-      "allWishListedItems",
-      JSON.stringify(this.state.wishListedItems)
+      _allWishListedItemsLocalStorage,
+      JSON.stringify(allOtherItems)
     );
   };
 }
