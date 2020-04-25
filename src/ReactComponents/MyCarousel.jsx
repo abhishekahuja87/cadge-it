@@ -34,7 +34,8 @@ class MyCarousel extends Component {
               }}
               src={
                 // "https://drive.google.com/uc?export=view&id=1tCjSpuTub_CLYo06m4e5dDe8vUEdl0qU"
-                "https://drive.google.com/uc?export=view&id=1soaqxA6xPpuiZpBTq1yVntWK_tbthAho"
+                // "https://drive.google.com/uc?export=view&id=1soaqxA6xPpuiZpBTq1yVntWK_tbthAho"
+                "../../res/images/MarylandToday06192019_ClothingRentAnimation_1920x1080.gif"
               }
               alt=""
             ></img>
