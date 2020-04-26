@@ -327,22 +327,6 @@ class HeaderAndSider extends Component {
       message_html: "Check this out!"
     };
 
-    // emailjs
-    //   .sendForm(
-    //     "default_service",
-    //     "YOUR_TEMPLATE_ID",
-    //     e.target,
-    //     "user_vxi82ZFH1k9v1mk8zd6Tm"
-    //   )
-    //   .then(
-    //     result => {
-    //       console.log(result.text);
-    //     },
-    //     error => {
-    //       console.log(error.text);
-    //     }
-    //   );
-
     emailjs
       .send(
         "default_service",
@@ -413,8 +397,10 @@ class HeaderAndSider extends Component {
       order_items: itemsStr,
       address: custAddress,
       total_amount: this.state.totalAmount,
-      message_html: "",
-      start_date: this.state.startDate
+      // message_html: "",
+      notes: notesFromCust,
+      start_date: this.state.startDate,
+      owner_name: ownerName
     };
 
     this.removeAllFromCart();
@@ -439,26 +425,6 @@ class HeaderAndSider extends Component {
             10
           );
         }
-
-        // function(response) {
-        //   // console.log("SUCCESS!", response.status, response.text);
-
-        //   this.removeAllFromCart();
-
-        //   message.success(
-        //     "The email with your order details has been sent. You will receive an email for the same with details.",
-        //     10
-        //   );
-        //   emailSuccess = true;
-        // },
-        // function(error) {
-        //   // console.log("FAILED...", error);
-        //   message.error(
-        //     "The order details could not be sent. please try again, " + error,
-        //     10
-        //   );
-        //   emailSuccess = false;
-        // }
       );
 
     emailjs
@@ -673,40 +639,6 @@ class HeaderAndSider extends Component {
           }
           style={{ width: "100%" }}
         >
-          {/* <React.Fragment>
-            <img
-              style={{
-                width: "15%",
-                height: "80px",
-                objectFit: "fit"
-              }}
-              alt="example"
-              // src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-              src={item.images[0]}
-            />
-
-            <span style={{ fontSize: "15px", marginLeft: "5px" }}>
-              Rent: {item.price}, Deposit: {item.price * 5}
-            </span>
-            <span style={{ fontSize: "15px", marginLeft: "5px" }}>=</span>
-            <span
-              style={{
-                fontSize: "15px",
-                marginLeft: "5px",
-                fontWeight: "bold"
-              }}
-            >
-              Rs {item.price + item.price * 5}
-            </span>
-            <Button
-              onClick={e => this.removeFromCart(item)}
-              type="primary"
-              // shape="circle"
-              icon={<CloseSquareOutlined />}
-              style={{ marginLeft: "5px" }}
-            />
-          </React.Fragment> */}
-
           <Meta
             avatar={
               <Avatar
@@ -766,41 +698,6 @@ class HeaderAndSider extends Component {
           }
           style={{ width: "100%" }}
         >
-          {/* <React.Fragment>
-            <img
-              style={{
-                width: "15%",
-                height: "80px",
-                objectFit: "fit"
-              }}
-              alt="example"
-              // src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-              src={item.images[0]}
-            />
-
-            <span style={{ fontSize: "15px", marginLeft: "5px" }}>
-              Rent: {item.price}, Deposit: {item.price * 5}
-            </span>
-            <span style={{ fontSize: "15px", marginLeft: "5px" }}>=</span>
-            <span
-              style={{
-                fontSize: "15px",
-                marginLeft: "5px",
-                fontWeight: "bold"
-              }}
-            >
-              Rs {item.price + item.price * 5}
-            </span>
-            <Button
-              onClick={e => this.removeFromWishlist(item)}
-              type="primary"
-              // shape="circle"
-              // icon="close-square"
-              icon={<CloseSquareOutlined />}
-              style={{ marginLeft: "5px" }}
-            />
-          </React.Fragment> */}
-
           <Meta
             avatar={
               <Avatar
@@ -840,20 +737,6 @@ class HeaderAndSider extends Component {
       </React.Fragment>
     );
   };
-
-  // removeFromCart = item => {
-  //   // console.log(item);
-  //   this.props.removeFromCart(item);
-  // };
-
-  // removeAllFromCart = () => {
-  //   this.props.removeAllFromCart();
-  // };
-
-  // removeFromWishlist = item => {
-  //   // console.log(item);
-  //   this.props.removeFromWishlist(item);
-  // };
 
   // tpm
   addToWishList = item => {
